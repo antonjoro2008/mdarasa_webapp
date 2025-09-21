@@ -52,6 +52,7 @@ class MpesaController extends Controller
             }
 
             $prefix = substr($billRefNo, 0, 3);
+            Log::info("The prefix here is: $prefix");
 
             if ($prefix == "MDR") {
 
@@ -69,7 +70,7 @@ class MpesaController extends Controller
                 Log::info("Forwarding transaction to the other server endpoint >> " . json_encode($payload));
                 $allisterToken = $this->allisterAccessToken();
 
-                Log::info("Got token from Allister " . $allisterToken);
+                Log::info("Got token from Allister $allisterToken");
 
                 $returned = $this->callAllisterAPIPostWithParameterToken($payload, self::MDARASA_OTHER_ENDPOINT, $allisterToken);
 
@@ -103,6 +104,7 @@ class MpesaController extends Controller
                 }
             } elseif ($prefix == "CBC") {
 
+                Log::info("This is a CBC payment request");
                 $phone = explode("-", $billRefNo)[1];
 
                 $payload = [
