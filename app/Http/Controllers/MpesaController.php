@@ -13,7 +13,7 @@ class MpesaController extends Controller
     const MDARASA_OTHER_ACCESS_TOKEN_ENDPOINT = "https://apis.mdarasa.com/oauth/v1/generate/access-token";
     const MDARASA_OTHER_CONSUMER_KEY = "ck_4wYaE2imMD8";
     const MDARASA_OTHER_CONSUMER_SECRET = "b4e40b5c65fe7a85ad4bdc5abd33d348a43553f0631bed44c42423fe7ef37f94";
-    const CBC_ENDPOINT = "https://skillszone.africa/api/payments/mpesa";
+    const CBC_ENDPOINT = "https://admin.skillszone.africa/api/payments/mpesa";
     public function mpesaC2BConfirm()
     {
 
@@ -103,12 +103,12 @@ class MpesaController extends Controller
                 }
             } elseif ($prefix == "CBC") {
 
-                $phone = $this->formatMobileNumber($msisdn);
+                $phone = explode("-", $billRefNo)[1];
 
                 $payload = [
-
+                    "status" => "successful",
                     "transaction_id" => $transactionId,
-                    "account" => $billRefNo,
+                    "reference" => $billRefNo,
                     "amount" => $transactionAmount,
                     "phone" => $phone,
                     "payload" => $postData
