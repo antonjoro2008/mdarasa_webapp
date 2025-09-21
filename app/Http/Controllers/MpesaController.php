@@ -113,7 +113,7 @@ class MpesaController extends Controller
                     "reference" => $billRefNo,
                     "amount" => $transactionAmount,
                     "phone" => $phone,
-                    "payload" => $postData
+                    "transaction_date" => $transactionTime
                 ];
 
                 Log::info("Forwarding transaction to the CBC endpoint >> " . json_encode($payload));
