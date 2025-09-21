@@ -129,9 +129,10 @@ class Controller extends BaseController
     {
 
         $httpRequest = curl_init($url);
+        $encodedData = json_encode($data);
 
         curl_setopt($httpRequest, CURLOPT_POST, true);
-        curl_setopt($httpRequest, CURLOPT_POSTFIELDS, $data);
+        curl_setopt($httpRequest, CURLOPT_POSTFIELDS, $encodedData);
         curl_setopt($httpRequest, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($httpRequest, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
         curl_setopt($httpRequest, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
