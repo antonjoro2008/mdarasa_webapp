@@ -120,10 +120,9 @@ class MpesaController extends Controller
 
                 $returned = $this->callCBCEndpoint($payload, self::CBC_ENDPOINT);
 
-                Log::info("Read Response from CBC " . print_r($returned, true));
-
                 if ($returned?->success) {
 
+                    Log::info("Read successful Response from CBC");
                     return;
 
                 } else {
