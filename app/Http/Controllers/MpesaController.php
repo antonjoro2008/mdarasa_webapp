@@ -14,7 +14,7 @@ class MpesaController extends Controller
     const MDARASA_OTHER_CONSUMER_KEY = "ck_4wYaE2imMD8";
     const MDARASA_OTHER_CONSUMER_SECRET = "b4e40b5c65fe7a85ad4bdc5abd33d348a43553f0631bed44c42423fe7ef37f94";
     const CBC_ENDPOINT = "https://admin.skillszone.africa/api/payments/mpesa";
-    const MDARASA_SKILLSZONE_ENDPOINT = "https://mdarsasa-admin.skillszone.africa/api/payments/mpesa";
+    const MDARASA_SKILLSZONE_ENDPOINT = "https://mdarasa-admin.skillszone.africa/api/payments/mpesa";
     public function mpesaC2BConfirm()
     {
 
