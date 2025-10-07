@@ -125,7 +125,7 @@ class Controller extends BaseController
         return $decodedResults;
     }
 
-    public function callCBCEndpoint($data, $url)
+    public function callServiceEndpoint($data, $url)
     {
 
         $httpRequest = curl_init($url);

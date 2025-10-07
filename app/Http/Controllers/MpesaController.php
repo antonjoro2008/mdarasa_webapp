@@ -14,6 +14,7 @@ class MpesaController extends Controller
     const MDARASA_OTHER_CONSUMER_KEY = "ck_4wYaE2imMD8";
     const MDARASA_OTHER_CONSUMER_SECRET = "b4e40b5c65fe7a85ad4bdc5abd33d348a43553f0631bed44c42423fe7ef37f94";
     const CBC_ENDPOINT = "https://admin.skillszone.africa/api/payments/mpesa";
+    const MDARASA_SKILLSZONE_ENDPOINT = "https://mdarsasa-admin.skillszone.africa/api/payments/mpesa";
     public function mpesaC2BConfirm()
     {
 
@@ -118,7 +119,7 @@ class MpesaController extends Controller
 
                 Log::info("Forwarding transaction to the CBC endpoint >> " . json_encode($payload));
 
-                $returned = $this->callCBCEndpoint($payload, self::CBC_ENDPOINT);
+                $returned = $this->callServiceEndpoint($payload, self::CBC_ENDPOINT);
 
                 if ($returned?->success) {
 
@@ -128,6 +129,51 @@ class MpesaController extends Controller
                 } else {
 
                     Log::info("Failed to forward the transaction to the CBC endpoint");
+
+                    DB::table('mpesa_transaction')->insert([
+                        'transaction_type' => $transactionType,
+                        'transaction_id' => $transactionId,
+                        'transaction_time' => $transactionTime,
+                        'transaction_amount' => $transactionAmount,
+                        'business_code' => $businessCode,
+                        'bill_ref_no' => $billRefNo,
+                        'org_account_balance' => $orgAccountBalance,
+                        'third_party_trans_id' => $thirdPartyTransId,
+                        'msisdn' => $msisdn,
+                        'first_name' => $firstName,
+                        'middle_name' => "",
+                        'last_name' => "",
+                    ]);
+
+                    return;
+
+                }
+            } elseif ($prefix == "SKL") {
+
+                Log::info("This is an mdarasa skillszone payment request");
+                $phone = explode("-", $billRefNo)[1];
+
+                $payload = [
+                    "status" => "successful",
+                    "transaction_id" => $transactionId,
+                    "reference" => $billRefNo,
+                    "amount" => $transactionAmount,
+                    "phone" => $phone,
+                    "transaction_date" => $transactionTime
+                ];
+
+                Log::info("Forwarding transaction to the mdarasa skillszone endpoint >> " . json_encode($payload));
+
+                $returned = $this->callServiceEndpoint($payload, self::MDARASA_SKILLSZONE_ENDPOINT);
+
+                if ($returned?->success) {
+
+                    Log::info("Read successful Response from Mdarasa Skillszone");
+                    return;
+
+                } else {
+
+                    Log::info("Failed to forward the transaction to the MDarasa Skillszone endpoint");
 
                     DB::table('mpesa_transaction')->insert([
                         'transaction_type' => $transactionType,
