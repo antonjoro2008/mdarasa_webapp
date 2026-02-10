@@ -194,7 +194,7 @@ class MpesaController extends Controller
                     return;
 
                 }
-            } elseif ($prefix == "MPUB") {
+            } elseif ($prefix == "MPU") {
 
                 Log::info("This is an mdarasa publisher payment request");
                 $phone = explode("-", $billRefNo)[1];
