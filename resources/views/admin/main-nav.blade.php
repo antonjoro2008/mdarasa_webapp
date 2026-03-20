@@ -2,7 +2,7 @@
     <div class="full-width">
         <div class="row">
             <div class="col-md-2 col-4"><a class="navbar-brand" href="/">
-                    <img src="{{ url('/images/logo.png')}}" class="logo" alt="MDARASA"></a>
+                    <img src="{{ url('/images/logo.png')}}" class="logo" alt="SkillsZone"></a>
             </div>
             <div class="d-sm-none col-8">
                 <button class="navbar-toggler pull-right" type="button" data-bs-toggle="collapse"

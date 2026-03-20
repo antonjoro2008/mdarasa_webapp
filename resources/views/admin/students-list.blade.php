@@ -14,11 +14,11 @@
             <div class="col-md-3"> {{ $student->firstName." ".$student->lastName }} </div>
             <div class="col-md-4"> {{ $student->email }} </div>
             <div class="col-md-2"> {!! !is_null($student->lastOrderDate)?$student->lastOrderDate:"<span
-                    style='color:#A20000' ;>Not purchased yet</span>" !!}
+                    style='color:#d8922e;font-weight:700;' ;>Not purchased yet</span>" !!}
             </div>
             <div class="col-md-3">{!!
                 !is_null($student->lastPurchasedCourseUnit)?$student->lastPurchasedCourseUnit:"<span
-                    style='color:#A20000' ;>Not Applicable</span>" !!}</div>
+                    style='color:#d8922e;font-weight:700;' ;>Not Applicable</span>" !!}</div>
         </div>
         <div class="separator"></div>
         @endforeach

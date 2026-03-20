@@ -34,9 +34,9 @@
             </div>
         </div>
         @if(!empty($courseUnitTopic->courseUnitSubtopics))
-        <div class="row" style="background:#202020;">
+        <div class="row" style="background:#edf2fa;">
             <div class="col-sm-12">
-                <div class="row" style="background: #383838 !important;">
+                <div class="row" style="background: #e2eaf7 !important;">
                     <div class="col-md-6 d-none d-sm-block"><span class="title-color">Subtopic</span></div>
                     <div class="col-md-6 d-none d-sm-block"><span class="title-color pull-right">Notes, Videos and
                             Questions</span>

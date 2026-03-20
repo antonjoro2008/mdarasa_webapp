@@ -50,7 +50,7 @@ class AuthController extends Controller
             Session::put("fullName", $loggedInDetails->firstName . " " . $loggedInDetails->lastName);
             Session::put("token", $loggedInDetails->token);
             Session::put("courseId", $loggedInDetails->courseId);
-            Session::flash('success', 'Congratulations! Welcome to MDARASA.');
+            Session::flash('success', 'Congratulations! Welcome to SkillsZone.');
 
         } elseif (!is_null($response) && $response->Code == 2) {
 
@@ -102,7 +102,7 @@ class AuthController extends Controller
             Session::put("fullName", $loggedInDetails->firstName . " " . $loggedInDetails->lastName);
             Session::put("token", $loggedInDetails->token);
             Session::put("courseId", $loggedInDetails->courseId);
-            Session::flash('success', 'Congratulations! Welcome to MDARASA.');
+            Session::flash('success', 'Congratulations! Welcome to SkillsZone.');
 
             return redirect("/lecturer");
 
@@ -155,7 +155,7 @@ class AuthController extends Controller
             Session::put("fullName", $loggedInDetails->firstName);
             Session::put("token", $loggedInDetails->token);
             Session::put("courseId", $loggedInDetails->courseId);
-            Session::flash('success', 'Congratulations! Welcome to MDARASA.');
+            Session::flash('success', 'Congratulations! Welcome to SkillsZone.');
 
             return redirect("/lecturer");
 

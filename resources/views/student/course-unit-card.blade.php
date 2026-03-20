@@ -1,10 +1,11 @@
-<div class="card topic-card-img-bg">
+<div class="card topic-card-img-bg course-card-modern">
+    <div class="course-card-badge">Featured Learning</div>
     <a class="nav-link center-flex" href="/course/unit/{{ $courseUnit->courseUnitId }}">
         <img class="card-img-top topic-card-img-bg br-12 topic-image img-fluid"
             src=@if($courseUnit->coverImage)<?php echo "/uploads/cover-images/$courseUnit->coverImage"; ?>
         @else <?php echo "/images/graduated-cap.webp"; ?> @endif alt="">
     </a>
-    <div class=" card-body txt-align-center">
+    <div class="card-body txt-align-center">
         <a class="nav-link" href="/course/unit/{{ $courseUnit->courseUnitId }}">
             <div class="card-title h5">{{ ucwords(strtolower($courseUnit->courseUnitName)) }}</div>
             <div>
@@ -15,6 +16,9 @@
             </div>
             <div class="instructor-name"> {{ $courseUnit->fullName }} </div>
         </a>
+        <div class="course-card-price mt-8">
+            KSh {{ number_format((float) $courseUnit->price, 0) }}
+        </div>
         <div>
             <button type="button" class="buy-course-button btn btn-primary" onclick="addToCart({{ $courseUnit->courseUnitId }},
                 {{ '"'.$courseUnit->courseUnitName.'"' }},

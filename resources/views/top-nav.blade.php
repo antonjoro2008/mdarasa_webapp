@@ -1,11 +1,11 @@
 <div class="small-header">
     <i class="fa fa-star"></i>
     @if(is_null(Session::get("token")) || strlen(Session::get("token")) == 0 || is_null(Session::get("profileId")))
-    <a class="sm-header-right-a" href="{{ url('/teach') }}">Be a Tutor on mDarasa</a>
+    <a class="sm-header-right-a" href="{{ url('/teach') }}">Be a Tutor on SkillsZone</a>
     @elseif(Session::get("role") == "LECTURER")
     <a class="sm-header-right-a" href="{{ url('/lecturer') }}">Go to Lecturer's View</a>
     @else
-    <a class="sm-header-right-a" href="{{ url('/teach') }}">Be a Tutor on mDarasa</a>
+    <a class="sm-header-right-a" href="{{ url('/teach') }}">Be a Tutor on SkillsZone</a>
     @endif
     <nav class="sm-header-right">
         @if(is_null(Session::get("token")) || strlen(Session::get("token")) == 0 || is_null(Session::get("profileId")))

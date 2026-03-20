@@ -14,7 +14,7 @@
                     <div class="mb-12">
                         Instructors from various universities, colleges and business leaders teach thousands of students
                         on
-                        mDarasa. We provide the tools and skills to teach what you love.
+                        SkillsZone. We provide the tools and skills to teach what you love.
                     </div>
                     <button type="button" class="btn btn-primary instructor-btn" data-bs-toggle="modal"
                         data-bs-target="#registerLecturerModal">
@@ -56,7 +56,7 @@
                             </li>
                             <li class="mb-8">
                                 <div class="title-color">Reach Your Audience</div>
-                                With mDarasa, your potential clients and the general public can easily discover your
+                                With SkillsZone, your potential clients and the general public can easily discover your
                                 content. Our robust marketing channels ensure that your message reaches the right people
                                 at the right time.
                             </li>
@@ -68,9 +68,9 @@
                             <li class="mb-8">
                                 <div class="title-color">Revenue Share</div>
                                 We believe in fair partnerships. Earn a generous 75% of the revenue generated from your
-                                content, while mDarasa receives 25% to support platform maintenance and development.
+                                content, while SkillsZone receives 25% to support platform maintenance and development.
                                 Don't miss this opportunity to join a thriving community of trainers and educators at
-                                mDarasa Learning Hub. Together, let's transform the way knowledge is shared and empower
+                                SkillsZone Learning Hub. Together, let's transform the way knowledge is shared and empower
                                 learners in Africa and beyond.
                             </li>
                         </ol>

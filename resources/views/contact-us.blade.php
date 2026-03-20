@@ -15,14 +15,14 @@
                     <div class="contact-details-align col-md-6">
                         <div>
                             <div class="title-color">CONTACT DETAILS</div>
-                            <div>MDARASA Limited</div>
+                            <div>SkillsZone Limited</div>
                             <div>3rd Floor, Orbit Place</div>
                             <div>Murang'a Road</div>
                             <div>P.O. Box 00000 – 00100</div>
                             <div>Nairobi, Kenya</div>
                             <div>Tel: +254 708068851</div>
                             <div>Mobile: +254 708068851</div>
-                            <div>Email: support@mdarasa.com</div>
+                            <div>Email: support@skillszone.africa</div>
                         </div>
                     </div>
                     <div class="col-md-6">

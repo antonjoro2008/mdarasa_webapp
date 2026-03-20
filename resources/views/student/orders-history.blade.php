@@ -18,7 +18,7 @@
             </div>
             <div class="col-md-2"> {{ $order->totalOrderValue }}</div>
             <div class="col-md-2"> {!! !is_null($order->paymentStatus)?$order->paymentStatus:'<span
-                    style="color:#A20;">Incomplete</span>' !!}
+                    style="color:#d8922e;font-weight:700;">Incomplete</span>' !!}
                 @if(is_null($order->paymentStatus))
                 <form method="post" action="{{ url('/student/order/complete') }}">
                     @csrf

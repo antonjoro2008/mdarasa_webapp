@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-sm-12">
             <a class="navbar-brand" href="/">
-                <img src="{{ url('/images/logo.png')}}" class="logo mt-12" alt="MDARASA">
+                <img src="{{ url('/images/logo.png')}}" class="logo mt-12" alt="SkillsZone">
             </a>
         </div>
     </div>

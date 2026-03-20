@@ -1,12 +1,22 @@
-const assetsCacheName = 'v1-assets';
-const dynamicCacheName = 'v1-dynamic';
+const assetsCacheName = 'v3-assets';
+const dynamicCacheName = 'v3-dynamic';
 
 self.addEventListener('install', (event) => {
     self.skipWaiting();
 });
 
 self.addEventListener('activate', (event) => {
-    self.clients.claim()
+    event.waitUntil(
+        caches.keys().then((cacheNames) => {
+            return Promise.all(
+                cacheNames
+                    .filter((cacheName) => {
+                        return cacheName !== assetsCacheName && cacheName !== dynamicCacheName;
+                    })
+                    .map((cacheName) => caches.delete(cacheName))
+            );
+        }).then(() => self.clients.claim())
+    );
 });
 
 self.addEventListener('fetch', (event) => {
@@ -31,6 +41,14 @@ self.addEventListener('fetch', (event) => {
     // if (event.request.url === (self.location.origin + '/undefined')) {
     //     return;
     // }
+
+    // Force fresh theme assets (css/js) to avoid stale branding/theme
+    if (event.request.destination === 'style' || event.request.destination === 'script') {
+        event.respondWith(
+            fetch(event.request, { cache: 'no-store' }).catch(() => caches.match(event.request))
+        );
+        return;
+    }
 
     // Tell the fetch to respond with this Promise chain
     event.respondWith(

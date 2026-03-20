@@ -33,11 +33,11 @@
                     <div class="col-sm-12">
                         @if($notesRecord->fileDomiciledAt == "Local")
                         <iframe src="/topics/{{ $notesRecord->subtopicNotes }}#toolbar=0"
-                            style="width:95%;height:500px;background:#202020 !important;">
+                            style="width:95%;height:500px;background:#ffffff !important;border:1px solid #d5deec;border-radius:10px;">
                         </iframe>
                         @else
                         <iframe src="https://{{ $notesRecord->subtopicNotes }}#toolbar=0"
-                            style="width:95%;height:500px;background:#202020 !important;">
+                            style="width:95%;height:500px;background:#ffffff !important;border:1px solid #d5deec;border-radius:10px;">
                         </iframe>
                         @endif
                     </div>

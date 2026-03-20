@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-3 col-4 d-none d-sm-block">
                 <a class="navbar-brand" href="/">
-                    <img src="{{ url('/images/logo.png')}}" class="logo" alt="MDARASA">
+                    <img src="{{ url('/images/logo.png')}}" class="logo" alt="SkillsZone">
                 </a>
             </div>
             <div class="d-sm-none col-3">
@@ -15,7 +15,7 @@
             </div>
             <div class="col-4 d-sm-none">
                 <a class="navbar-brand pt-0" href="/">
-                    <img src="{{ url('/images/logo.png')}}" class="logo" alt="MDARASA">
+                    <img src="{{ url('/images/logo.png')}}" class="logo" alt="SkillsZone">
                 </a>
             </div>
             <div class="col-2 d-sm-none flex-vertical-center">

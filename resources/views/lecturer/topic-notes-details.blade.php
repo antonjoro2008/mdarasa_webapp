@@ -57,7 +57,8 @@
                 <div class="center-flex">
                     <iframe
                         src="https://docs.google.com/gview?url={{ $serverUrl }}/topic/download/{{ $topicNotes }}&embedded=true"
-                        style="width:95%;height:500px;background:#202020 !important;" frameborder="0">
+                        style="width:95%;height:500px;background:#ffffff !important;border:1px solid #d5deec;border-radius:10px;"
+                        frameborder="0">
                     </iframe>
                 </div>
                 @if(!is_null($courseUnitTopics))

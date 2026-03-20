@@ -4,13 +4,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
-    <title>mDarasa - Revolutionalizing Learning</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>SkillsZone - Revolutionalizing Learning</title>
 
     <!-- <link href="https://vjs.zencdn.net/8.6.1/video-js.css" rel="stylesheet" /> -->
 
     <link rel="stylesheet" href="{{ asset('/css/demo.css') }}" />
-    <link href="{{ asset('/css/style.css?v=32') }}" rel="stylesheet">
+    <link href="{{ asset('/css/style.css?v=40') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">
     <link href="{{ asset('/css/jquery.datetimepicker.css') }}" rel="stylesheet">
@@ -43,7 +46,7 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js">
         </script>
         <script src="/js/ckeditor/ckeditor.js"></script>
-        <script src="/js/mdarasa.js?v=16"></script>
+        <script src="/js/mdarasa.js?v=20"></script>
 
         <script>
             toastr.options.closeButton = true;
@@ -77,13 +80,13 @@
     </div>
     <style>
         #toast-container>.toast-error {
-            background: #A20 !important;
+            background: #d8922e !important;
             color: #FFF !important;
             background-image: none !important;
         }
 
         #toast-container>.toast-success {
-            background: #198754 !important;
+            background: #254575 !important;
             color: #FFF !important;
             background-image: none !important;
         }
@@ -91,7 +94,7 @@
 
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js')
+            navigator.serviceWorker.register('/sw.js?v=3', { updateViaCache: 'none' })
                 .then(function (reg) {
                     console.log('ServiceWorker registration successful with scope: ', reg.scope);
 

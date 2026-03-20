@@ -13,8 +13,8 @@
     </div>
     <div class="col-md-7 footer-bd disclaimer">
         <div class="footer-links">
-            mDarasa provides comprehensive eLearning solutions for higher education, skill development, and corporate
-            training space. mDarasa tailors’ turnkey solutions with its customer-centric approach to delivering the
+            SkillsZone provides comprehensive eLearning solutions for higher education, skill development, and corporate
+            training space. SkillsZone tailors’ turnkey solutions with its customer-centric approach to delivering the
             best-in-class learning experience.
         </div>
     </div>
@@ -29,14 +29,14 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <a href="mailto:support@mdarasa.com" rel="noopener">
-                        Email us on <span class="tit-color">support@mdarasa.com</span>
+                <a href="mailto:support@skillszone.africa" rel="noopener">
+                        Email us on <span class="tit-color">support@skillszone.africa</span>
                     </a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12 copyright">
-                    Copyright &copy; 2023 mDarasa Business Solutions Ltd. All Right Reserved.
+                    Copyright &copy; 2023 SkillsZone Business Solutions Ltd. All Right Reserved.
                 </div>
             </div>
         </div>

@@ -17,9 +17,9 @@
             <div class="col-md-5"> {{ $courseUnitTopic->topicName }} </div>
         </div>
         @if(!empty($courseUnitTopic->courseUnitSubtopics))
-        <div class="row" style="background:#303030;">
+        <div class="row" style="background:#edf2fa;">
             <div class="col-sm-12">
-                <div class="row" style="background: #383838 !important;">
+                <div class="row" style="background: #e2eaf7 !important;">
                     <div class="col-md-6"><span class="title-color">Subtopic</span></div>
                     <div class="col-md-6"><span class="title-color pull-right">Notes and Videos</span></div>
                 </div>
