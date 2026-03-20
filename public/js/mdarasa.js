@@ -43,7 +43,7 @@ function refreshCart(cartCourseUnits) {
             function (item) {
                 itemsInCartDetails = itemsInCartDetails + `<div class="mt-12 row">
                 <div class="col-md-3">
-                    <img src="/images/graduated-cap.webp" width="120px" alt="">
+                    <img src="/images/learning-placeholder.svg" width="120px" alt="Course">
                 </div>
                 <div class="col-md-7">`+ item.courseUnitName + `<div class="instructor-name">
                 `+ item.instructor + `</div>

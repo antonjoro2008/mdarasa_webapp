@@ -1,9 +1,29 @@
+@php
+    $raw = $courseUnit->coverImage ?? ($courseUnit->coverImageUrl ?? null);
+    $raw = is_string($raw) ? trim($raw) : '';
+    if ($raw === '') {
+        $coverSrc = asset('images/learning-placeholder.svg');
+        $coverAlt = 'Learning course placeholder';
+        $coverClass = 'course-cover course-cover--placeholder';
+    } else {
+        if (preg_match('#^https?://#i', $raw)) {
+            $coverSrc = $raw;
+        } elseif (strpos($raw, '/') === 0) {
+            $coverSrc = $raw;
+        } elseif (preg_match('#^(uploads|storage)/#i', $raw)) {
+            $coverSrc = '/' . ltrim($raw, '/');
+        } else {
+            $coverSrc = '/uploads/cover-images/' . $raw;
+        }
+        $coverAlt = $courseUnit->courseUnitName ?? 'Course cover';
+        $coverClass = 'course-cover course-cover--photo';
+    }
+@endphp
 <div class="card topic-card-img-bg course-card-modern">
     <div class="course-card-badge">Featured Learning</div>
     <a class="nav-link center-flex" href="/course/unit/{{ $courseUnit->courseUnitId }}">
-        <img class="card-img-top topic-card-img-bg br-12 topic-image img-fluid"
-            src=@if($courseUnit->coverImage)<?php echo "/uploads/cover-images/$courseUnit->coverImage"; ?>
-        @else <?php echo "/images/graduated-cap.webp"; ?> @endif alt="">
+        <img class="card-img-top topic-card-img-bg br-12 topic-image img-fluid {{ $coverClass }}"
+            src="{{ $coverSrc }}" alt="{{ $coverAlt }}">
     </a>
     <div class="card-body txt-align-center">
         <a class="nav-link" href="/course/unit/{{ $courseUnit->courseUnitId }}">

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Learning">
+  <defs>
+    <linearGradient id="lp-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#254575"/>
+      <stop offset="100%" stop-color="#1b3357"/>
+    </linearGradient>
+    <linearGradient id="lp-accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FBB03B"/>
+      <stop offset="100%" stop-color="#ffd27a"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="18" fill="url(#lp-bg)"/>
+  <!-- Open book -->
+  <path fill="#ffffff" fill-opacity="0.95" d="M24 36h34v56H28c-2.2 0-4-1.8-4-4V40c0-2.2 1.8-4 4-4z"/>
+  <path fill="#e8eef8" fill-opacity="0.98" d="M60 36h36c2.2 0 4 1.8 4 4v48c0 2.2-1.8 4-4 4H60V36z"/>
+  <path fill="none" stroke="url(#lp-accent)" stroke-width="2.8" stroke-linecap="round" d="M60 36v56"/>
+  <path stroke="#254575" stroke-width="1.4" stroke-opacity="0.35" stroke-linecap="round" d="M32 50h14M32 57h11M32 64h13M74 50h14M78 57h11M74 64h13"/>
+  <!-- Idea spark -->
+  <circle cx="90" cy="32" r="6" fill="url(#lp-accent)"/>
+  <path fill="none" stroke="url(#lp-accent)" stroke-width="1.6" stroke-linecap="round" d="M84 24l-2.5-3.5M96 24l2.5-3.5M90 18v-4"/>
+</svg>

@@ -1791,8 +1791,28 @@ select.form-control:focus {
 }
 
 .topic-image {
-    object-fit: cover;
     min-height: 120px;
+}
+
+/* Real API/server cover photos — fill card nicely */
+.course-cover--photo {
+    width: 100% !important;
+    margin: 0 !important;
+    object-fit: cover;
+    object-position: center;
+    min-height: 140px;
+    max-height: 200px;
+}
+
+/* SVG / generic placeholder — don’t crop the artwork */
+.course-cover--placeholder {
+    width: 72% !important;
+    max-width: 200px;
+    margin: 12px auto !important;
+    object-fit: contain;
+    object-position: center;
+    min-height: 100px;
+    max-height: 140px;
 }
 
 .card-title.h5 {
