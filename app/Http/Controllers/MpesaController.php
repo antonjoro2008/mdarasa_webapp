@@ -16,6 +16,7 @@ class MpesaController extends Controller
     const CBC_ENDPOINT = "https://admin.skillszone.africa/api/payments/mpesa";
     const MDARASA_SKILLSZONE_ENDPOINT = "https://mdarasa-admin.skillszone.africa/api/payments/mpesa";
     const MDARASA_PUBLISHER_ENDPOINT = "https://publishers.mdarasa.com/api/payments/mpesa";
+
     public function mpesaC2BConfirm()
     {
 
@@ -68,6 +69,8 @@ class MpesaController extends Controller
                     "phone" => $phone,
                     "payload" => $postData
                 ];
+
+                $this->forwardBillingC2bConfirmation($postData);
 
                 Log::info("Forwarding transaction to the other server endpoint >> " . json_encode($payload));
                 $allisterToken = $this->allisterAccessToken();
@@ -509,6 +512,30 @@ class MpesaController extends Controller
     public function mpesaC2BValidate()
     {
         echo '{"ResultCode": 0, "ResultDesc": "Accepted"}';
+    }
+
+    /**
+     * Forward raw Safaricom C2B JSON to the mDarasa billing subsystem (unit fees / M-PESA inbox).
+     */
+    private function forwardBillingC2bConfirmation(string $postData): void
+    {
+        $url = env('MDARASA_BILLING_C2B_CONFIRMATION_URL', 'https://billing.mdarasa.com/mpesa/c2b-confirmation');
+
+        $httpRequest = curl_init($url);
+
+        curl_setopt($httpRequest, CURLOPT_POST, true);
+        curl_setopt($httpRequest, CURLOPT_POSTFIELDS, $postData);
+        curl_setopt($httpRequest, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($httpRequest, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+        curl_setopt($httpRequest, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($httpRequest, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($httpRequest, CURLOPT_TIMEOUT, 20);
+
+        $results = curl_exec($httpRequest);
+        $httpCode = curl_getinfo($httpRequest, CURLINFO_HTTP_CODE);
+        curl_close($httpRequest);
+
+        Log::info("Billing C2B forward HTTP {$httpCode}: ".($results ?: '(empty response)'));
     }
 
     private function formatMobileNumber($number)
